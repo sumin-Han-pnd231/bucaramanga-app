@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accident Severity Prediction | Bucaramanga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <div class="badge">AI Prediction System</div>
+            <h1>Bucaramanga Safety Dispatch</h1>
+            <p>Predict accident severity (Property Damage, Injuries, Fatalities) to automatically prioritize emergency service dispatch.</p>
+        </header>
+
+        <div class="content-grid">
+            <section class="form-section">
+                <h2>Incident Details</h2>
+                <form id="prediction-form">
+                    
+                    <div class="input-group">
+                        <label for="time_of_day">Time of Day</label>
+                        <select id="time_of_day" name="time_of_day" required>
+                            <option value="" disabled selected>Select time period</option>
+                            <option value="Morning">Morning (06:00 - 11:59)</option>
+                            <option value="Afternoon">Afternoon (12:00 - 17:59)</option>
+                            <option value="Evening">Evening (18:00 - 23:59)</option>
+                            <option value="Night">Night (00:00 - 05:59)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="neighborhood">Neighborhood</label>
+                        <select id="neighborhood" name="neighborhood" required>
+                            <option value="" disabled selected>Select neighborhood</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Cabecera del Llano">Cabecera del Llano</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="Provenza">Provenza</option>
+                            <option value="Mutis">Mutis</option>
+                            <option value="Real de Minas">Real de Minas</option>
+                            <option value="La Concordia">La Concordia</option>
+                            <option value="San Alonso">San Alonso</option>
+                            <option value="Terrazas">Terrazas</option>
+                            <option value="Sotomayor">Sotomayor</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="vehicle_type">Vehicle Type</label>
+                        <select id="vehicle_type" name="vehicle_type" required>
+                            <option value="" disabled selected>Select vehicle involved</option>
+                            <option value="Motorcycle">Motorcycle 🏍️</option>
+                            <option value="Car">Car 🚗</option>
+                            <option value="Bus">Bus 🚌</option>
+                            <option value="Truck">Truck 🚚</option>
+                            <option value="Bicycle">Bicycle 🚲</option>
+                            <option value="Pedestrian">Pedestrian (No vehicle) 🚶</option>
+                            <option value="Other">Other ❓</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reporting_entity">Reporting Entity</label>
+                        <select id="reporting_entity" name="reporting_entity" required>
+                            <option value="" disabled selected>Select agency</option>
+                            <option value="Transit Police">Transit Police (Polfa)</option>
+                            <option value="National Police">National Police</option>
+                            <option value="Fire Department">Fire Department</option>
+                            <option value="Ambulance">Ambulance Services</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="primary-btn">
+                        <span>Analyze Severity</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </form>
+            </section>
+
+            <section class="result-section">
+                <div class="result-card empty-state" id="result-card">
+                    <div class="empty-icon">🛡️</div>
+                    <h3>Waiting for Data</h3>
+                    <p>Enter the incident details to predict the severity level.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
